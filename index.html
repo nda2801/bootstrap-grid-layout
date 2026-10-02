@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiết kế Trang Web với Bootstrap Grid System</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons (Tùy chọn để giao diện đẹp hơn) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="bg-light d-flex flex-column min-vh-100">
+    <!-- 1. HEADER -->
+    <header class="bg-primary text-white py-4 text-center">
+      <div class="container">
+        <h1 class="fw-bold mb-1">Trang Web Tin Tức & Công Nghệ</h1>
+        <p class="lead mb-0">Thực hành Bootstrap 5 Containers & Grid System</p>
+      </div>
+    </header>
+
+    <!-- 2. NAVBAR VỚI DROPDOWN -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">MyBlog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Giới thiệu</a>
+            </li>
+            <!-- Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Chuyên mục
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Lập trình Web</a></li>
+                <li><a class="dropdown-item" href="#">Bootstrap & UI/UX</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Tài liệu tham khảo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Liên hệ</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Tìm kiếm..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Tìm</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 3. MAIN WRAPPER (CONTAINER + GRID SYSTEM) -->
+    <main class="container my-4 flex-grow-1">
+      <div class="row g-4">
+        <!-- MAIN CONTENT: col-12 trên mobile, col-lg-8 trên màn hình >= 992px -->
+        <section class="col-12 col-lg-8">
+          <div class="bg-white p-4 rounded shadow-sm mb-4">
+            <article>
+              <h2 class="h3 fw-bold text-dark mb-3">
+                Hiểu sâu về Hệ thống Lưới (Grid System) trong Bootstrap
+              </h2>
+              <div class="text-muted small mb-3">
+                <span><i class="bi bi-calendar-event me-1"></i>03/10/2026</span>
+                &bull;
+                <span><i class="bi bi-person me-1"></i>Tác giả: Admin</span>
+              </div>
+              <img
+                src="https://picsum.photos/800/350"
+                class="img-fluid rounded mb-3 w-100"
+                alt="Minh họa Bootstrap Grid"
+              />
+              <p>
+                Bootstrap cung cấp hệ thống lưới 12 cột dựa trên Flexbox rất
+                linh hoạt. Bằng cách kết hợp các tiền tố kích thước màn hình như
+                <code>col-</code>, <code>col-sm-</code>, <code>col-md-</code>,
+                <code>col-lg-</code>, lập trình viên có thể dễ dàng kiểm soát tỷ
+                lệ hiển thị trên mọi thiết bị.
+              </p>
+              <p>
+                Ở màn hình lớn (Desktop $\ge$ 992px), giao diện sẽ tự động chia
+                làm 2 cột: cột nội dung chính chiếm 8 phần
+                (<code>col-lg-8</code>) và thanh bên phụ chiếm 4 phần
+                (<code>col-lg-4</code>). Khi xem trên các thiết bị di động, cả 2
+                phần này sẽ chiếm trọn 12 phần (<code>col-12</code>) và xếp
+                chồng lên nhau gọn gàng.
+              </p>
+              <a href="#" class="btn btn-primary btn-sm">Đọc tiếp &rarr;</a>
+            </article>
+          </div>
+
+          <div class="bg-white p-4 rounded shadow-sm">
+            <article>
+              <h2 class="h3 fw-bold text-dark mb-3">
+                Tại sao nên kết hợp Container và Responsive Breakpoints?
+              </h2>
+              <p class="text-secondary">
+                <code>container</code> giúp giới hạn độ rộng tối đa và căn giữa
+                nội dung trên các màn hình rộng, tránh tình trạng văn bản trải
+                quá dài gây khó đọc.
+              </p>
+              <a href="#" class="btn btn-outline-secondary btn-sm"
+                >Xem chi tiết</a
+              >
+            </article>
+          </div>
+        </section>
+
+        <!-- SIDEBAR: col-12 trên mobile (nằm dưới main content), col-lg-4 trên màn hình >= 992px -->
+        <aside class="col-12 col-lg-4">
+          <!-- Widget 1: Thông tin tác giả -->
+          <div class="card mb-4 shadow-sm border-0">
+            <div class="card-header bg-primary text-white fw-bold">
+              <i class="bi bi-info-circle me-1"></i> Giới thiệu
+            </div>
+            <div class="card-body">
+              <p class="card-text text-muted mb-0">
+                Trang web thực hành các kỹ thuật căn bản với Bootstrap CSS
+                Framework. Đảm bảo giao diện chuẩn responsive trên mọi kích
+                thước.
+              </p>
+            </div>
+          </div>
+
+          <!-- Widget 2: Danh mục liên kết -->
+          <div class="card mb-4 shadow-sm border-0">
+            <div class="card-header bg-secondary text-white fw-bold">
+              <i class="bi bi-tags me-1"></i> Thẻ nổi bật
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-primary">HTML5</span>
+                <span class="badge bg-success">CSS3</span>
+                <span class="badge bg-info text-dark">Bootstrap 5</span>
+                <span class="badge bg-warning text-dark">Responsive</span>
+                <span class="badge bg-dark">Grid System</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget 3: Bài viết nổi bật -->
+          <div class="card shadow-sm border-0">
+            <div class="card-header bg-light fw-bold">
+              <i class="bi bi-star me-1"></i> Bài viết liên quan
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none"
+                  >Hướng dẫn tạo form đẹp với Bootstrap</a
+                >
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none"
+                  >Tìm hiểu về Flexbox căn bản</a
+                >
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none"
+                  >Tối ưu tốc độ tải trang web</a
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- 4. FOOTER -->
+    <footer class="bg-dark text-white py-3 mt-auto">
+      <div class="container text-center">
+        <p class="mb-0 small">
+          &copy; 2026 Bản quyền thuộc về MyBlog. Thiết kế với Bootstrap Grid
+          System.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle (bao gồm Popper để chạy Dropdown và Navbar Collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
